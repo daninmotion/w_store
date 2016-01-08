@@ -10,4 +10,9 @@ class CartsController < ApplicationController
 
 	def show
 	end
+
+	def checkout
+		@order_form = OrderForm.new user: User.new	
+	end
+
 end
