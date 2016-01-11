@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :products
+  resource :pages, only: [:show]
 
   resource :cart, only: [ :show ] do
     post "add", path: "add/:id", on: :member
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'products#index'
+  root 'pages#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

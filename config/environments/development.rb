@@ -40,6 +40,23 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: "587",
+    domain: "gmail.com", 
+    user_name: 'dan85.cardenas@gmail.com',
+    password: 'lightsaber03',
+    authentication: "plain",
+    enable_starttls_auto: true
+  }
+
+  Braintree::Configuration.environment = :sandbox
+  Braintree::Configuration.merchant_id = "6jy4yyn4nztpvswv"
+  Braintree::Configuration.public_key = "xstk45hpkxxvc6vt"
+  Braintree::Configuration.private_key = "cfa9ea1f3959c4b794e9f573975a209c"
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
