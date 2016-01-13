@@ -5,6 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   #validates_presence_of :name, :email, :address, :postal_code, :city, :phone
+
+  def full_address
+	<<EOF
+#{address}
+#{postal_code} #{city}
+#{state}
+EOF
+  end
 end
 
 

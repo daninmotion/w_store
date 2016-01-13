@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<a class="navbar-brand">
-				tipple
+				TIPPLE
 			</a>
 		</div>
 		<% if current_user && current_user.admin? %>
@@ -22,6 +22,8 @@
 				</ul>
 			</div>
 		<% end %>
-		<%= render 'cart' %>
+		<% if current_user && current_user.admin? %>
+			<%= render 'cart' %>
+		<% end %>
 	</div>
 </nav>
