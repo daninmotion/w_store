@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates_presence_of :name, :email, :address, :postal_code, :city, :phone
+  #validates_presence_of :name, :email, :address, :postal_code, :city, :phone
 end
 
 

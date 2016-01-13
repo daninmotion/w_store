@@ -25,6 +25,7 @@ gem 'mini_magick', '~> 4.3', '>= 4.3.6'
 gem 'devise', '~> 3.5', '>= 3.5.3'
 gem 'country_select', '~> 2.5', '>= 2.5.1'
 gem 'braintree'
+gem 'trix'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

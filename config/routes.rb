@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :posts
   devise_for :users
   resources :products
   resource :pages, only: [:show]
 
   resource :cart, only: [ :show ] do
-    post "add", path: "add/:id", on: :member
+    post "add", path: "add/:id"
     get :checkout
   end
 
-  resources :orders, only: [ :index, :show, :create ]
+  resources :orders, only: [ :index, :show, :create ] do
+    member do
+      get :new_payment
+      post :pay
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

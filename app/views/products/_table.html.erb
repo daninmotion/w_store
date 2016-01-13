@@ -1,0 +1,14 @@
+<table class="table table-hover"> 
+  <% products.each do |product| %>
+    <tr>
+      <td><%= image_tag product.image, class: "thumbnail" %></td>
+      <td><%= product.content.truncate(700).html_safe %></td>
+      <td><%= link_to product.name, product %></td>
+      <td><%= number_to_currency product.price %></td>
+      <% if current_user && current_user.admin? %>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

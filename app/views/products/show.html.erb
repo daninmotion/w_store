@@ -4,6 +4,8 @@
 
 <p><%= image_tag @product.image %></p>
 
+<p><%= @product.category.name %></p>
+
 <p><%= link_to "Add to cart", add_cart_path, method: :post, class: "btn btn-primary" %></p>
 
 <p>

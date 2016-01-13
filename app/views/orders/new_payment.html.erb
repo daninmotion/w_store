@@ -1,0 +1,10 @@
+<h1>Enter payment</h1>
+
+<%= render 'data', order: @order %>
+
+<%= form_tag pay_order_path do %> 
+	<div id="dropin">
+		<%= submit_tag "Pay", class: "btn btn-primary" %>
+		<%= render 'braintree' %>
+	</div>
+<% end %>
